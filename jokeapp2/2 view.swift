@@ -173,12 +173,12 @@ class ViewController: UIViewController {
             let ba = UIAlertController(title: "Все верно", message: "ок", preferredStyle: .alert)
             let punschlinelable1 = UIAlertAction(title: "ok", style: .cancel)
             
-        
-    
+            
+            
             
         }else{
-//            print("\()")
-                        let bb = UIAlertController(title: "Oшибка", message: "Данные ввидены не правельно попробуйте еще раз", preferredStyle: .alert)
+            //            print("\()")
+            let bb = UIAlertController(title: "Oшибка", message: "Данные ввидены не правельно попробуйте еще раз", preferredStyle: .alert)
             let  button2 = UIAlertAction(title: "OK", style:.cancel)
             bb.addAction(button2)
             present(bb, animated: true, completion: nil)
@@ -186,3 +186,6 @@ class ViewController: UIViewController {
         }
     }
 }
+    
+    
+//dqdq
