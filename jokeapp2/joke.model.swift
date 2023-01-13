@@ -7,11 +7,26 @@
 
 import Foundation
 class Jokemodel{
+    
+
+    
+    
+    
+    
     private  var netwokrMandeger = NetworkManager()
     private weak var conrtoller: Jokecontrol!
     init(conrtoller:Jokecontrol){
         self.conrtoller = conrtoller
+        
+        
+         
+            
+            
+            
+            
+        }
     }
+        
     public func getjoke(){
         netwokrMandeger.getJoke(completion: { joke in
             self.conrtoller.joke = joke

@@ -7,9 +7,9 @@
 
 import Foundation
 struct joke:Codable{
-    var type:String
+    
     var setup :String
-    var panchline:String
-    var id:Int
+    var punchline:String
+   
 }
 

@@ -34,13 +34,16 @@ class ViewController: UIViewController {
     private lazy var lablejoke:UILabel = {
         let view = UILabel()
         view.text = "setup"
+        view.font = UIFont(name: "Impact", size: 20)
+        view.numberOfLines = 0
+        view.lineBreakMode = .byWordWrapping
         
         view.textColor = .black
         
         return view
     }()
     private lazy var punschlinelable:UILabel = {   let view = UILabel()
-        
+        view.text = "punchline"
         view.backgroundColor = .white
         view.textColor = .black
         return view
@@ -65,11 +68,11 @@ class ViewController: UIViewController {
     private lazy var textfild:UITextField = {
         let view = UITextField()
         view.backgroundColor =  .yellow
-        view.text = "Ваш Ответ"
         view.layer.cornerRadius = 70/2
         view.layer.borderColor = UIColor.systemOrange.cgColor
         view.layer.borderWidth = 5
         return view
+        
         
     }()
     
@@ -157,6 +160,7 @@ class ViewController: UIViewController {
     }
     public func setjokesetup(){
         lablejoke.text = controller.joke?.setup
+        let pop = punschlinelable.text = controller.joke?.punchline
     }
     
     @objc func botonnext(){
@@ -164,12 +168,16 @@ class ViewController: UIViewController {
         
     }
     @objc func qw1(){
-        let ansver = controller?.getjoke()
-        if (ansver != nil) == true{
+        let ansver = controller.joke?.punchline
+        if textfild == ansver  {
+            let ba = UIAlertController(title: "Все верно", message: "ок", preferredStyle: .alert)
+            let punschlinelable1 = UIAlertAction(title: "ok", style: .cancel)
+            
+        
     
             
         }else{
-            print("error")
+//            print("\()")
                         let bb = UIAlertController(title: "Oшибка", message: "Данные ввидены не правельно попробуйте еще раз", preferredStyle: .alert)
             let  button2 = UIAlertAction(title: "OK", style:.cancel)
             bb.addAction(button2)
