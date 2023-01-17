@@ -8,7 +8,7 @@
 import Foundation
 class Jokemodel{
     
-
+    
     
     
     
@@ -19,21 +19,25 @@ class Jokemodel{
         self.conrtoller = conrtoller
         
         
-         
-            
-            
-            
-            
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    public func getjoke(){
+        netwokrMandeger.getJoke { joke in
+            self.conrtoller.joke = joke
         }
     }
-        
-    public func getjoke(){
-        netwokrMandeger.getJoke(completion: { joke in
-            self.conrtoller.joke = joke
-        })
-        }
-        }
-        
-        
-        
-      
+}
+
+    
+    
+    
+    
+    
+

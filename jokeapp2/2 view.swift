@@ -42,12 +42,12 @@ class ViewController: UIViewController {
         
         return view
     }()
-    private lazy var punschlinelable:UILabel = {   let view = UILabel()
-        view.text = "punchline"
-        view.backgroundColor = .white
-        view.textColor = .black
-        return view
-    }()
+//    private lazy var punschlinelable:UILabel = {   let view = UILabel()
+//        view.text = "punchline"
+//        view.backgroundColor = .white
+//        view.textColor = .black
+//        return view
+
     private lazy var fon2:UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "op2")
@@ -117,11 +117,11 @@ class ViewController: UIViewController {
             make.right.equalToSuperview()
             make.left.equalToSuperview().offset(300)
         }
-        view.addSubview(punschlinelable)
-        punschlinelable.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make .top.equalTo(lablejoke.snp.bottom).offset(30)
-        }
+//        view.addSubview(punschlinelable)
+//        punschlinelable.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make .top.equalTo(lablejoke.snp.bottom).offset(30)
+        
         view.addSubview(punzlinebutton)
         punzlinebutton.snp.makeConstraints { make in
             
@@ -160,7 +160,7 @@ class ViewController: UIViewController {
     }
     public func setjokesetup(){
         lablejoke.text = controller.joke?.setup
-        let pop = punschlinelable.text = controller.joke?.punchline
+     
     }
     
     @objc func botonnext(){
@@ -168,24 +168,21 @@ class ViewController: UIViewController {
         
     }
     @objc func qw1(){
-        let ansver = controller.joke?.punchline
-        if textfild == ansver  {
-            let ba = UIAlertController(title: "Все верно", message: "ок", preferredStyle: .alert)
-            let punschlinelable1 = UIAlertAction(title: "ok", style: .cancel)
+        if textfild.text == controller.joke?.punchline {
+            let correctAlert = UIAlertController(title: "Правильный ответ!", message: "Вы молодец!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            correctAlert.addAction(okAction)
+            present(correctAlert, animated: true)
+        } else {
+            let incorrectAlert = UIAlertController(title: "Неправильный ответ!", message: "Ответ: \(controller.joke?.punchline ?? "punchline")", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            incorrectAlert.addAction(okAction)
+            present(incorrectAlert, animated: true)
             
+            print(controller.joke?.punchline)
             
-            
-            
-        }else{
-            //            print("\()")
-            let bb = UIAlertController(title: "Oшибка", message: "Данные ввидены не правельно попробуйте еще раз", preferredStyle: .alert)
-            let  button2 = UIAlertAction(title: "OK", style:.cancel)
-            bb.addAction(button2)
-            present(bb, animated: true, completion: nil)
-            
+            //dqdq
         }
     }
 }
-    
-    
-//dqdq
+
